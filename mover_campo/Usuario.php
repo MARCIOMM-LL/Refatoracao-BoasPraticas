@@ -6,14 +6,12 @@ class Usuario
 {
     private $nome;
     private $sobrenome;
-    private $email;
     private $contato;
 
-    public function __construct(string $nome, string $sobrenome, string $email, Contato $contato)
+    public function __construct(string $nome, string $sobrenome, Contato $contato)
     {
         $this->nome = $nome;
         $this->sobrenome = $sobrenome;
-        $this->email = $email;
         $this->contato = $contato;
     }
 
@@ -27,16 +25,11 @@ class Usuario
         return $this->sobrenome;
     }
 
-    public function getEmail(): string
-    {
-        return $this->email;
-    }
-
     public function imprimirInformacoes(): void
     {
         echo "<p>-- Informações de contato --</p>";
-        echo "<p>Usuário: " . $this->nome . "</p>";
-        echo "<p>Email: " . $this->email . "</p>";
+        echo "<p>Usuário Nome: " . $this->nome . "</p>";
+        echo "<p>Usuário Sobre: " . $this->sobrenome . "</p>";
         echo $this->contato;
     }
 }
