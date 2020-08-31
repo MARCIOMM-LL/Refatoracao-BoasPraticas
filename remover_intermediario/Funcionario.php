@@ -4,7 +4,6 @@ namespace Alura\RemoverIntermediario;
 
 class Funcionario
 {
-
     private $nome;
     private $cargo;
 

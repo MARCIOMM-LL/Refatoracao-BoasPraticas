@@ -7,15 +7,30 @@ namespace Alura\EncapsularCampo;
 require 'Empresa.php';
 require 'Funcionario.php';
 
-$alura = new Empresa();
-$funcionario = new Funcionario('Giovanni', 100);
+//Sem refatoração
+//$alura = new Empresa();
+//$funcionario = new Funcionario('Márcio', 100);
+//
+//$alura->adicionarFuncionario($funcionario);
+//
+//echo $funcionario->salario;
+//
+//$funcionario->salario = 500;
+//
+//$alura->promoveFuncionario($funcionario, 50);
+//
+//echo $funcionario->salario;
 
-$alura->adicionarFuncionario($funcionario);
+//Com refatoração
+$drummond = new Empresa();
+$funcionario = new Funcionario('Márcio', 1000);
 
-echo $funcionario->salario;
+$drummond->adicionarFuncionario($funcionario);
 
-$funcionario->salario = 500;
+echo $funcionario->getSalario();
 
-$alura->promoveFuncionario($funcionario, 50);
+echo "<br />";
 
-echo $funcionario->salario;
+$drummond->promoveFuncionario($funcionario, 50);
+
+echo $funcionario->getSalario();

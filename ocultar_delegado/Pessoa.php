@@ -15,4 +15,10 @@ class Pessoa
     {
         return $this->departamento;
     }
+
+    //Método ocultar delegado
+    public function getNomeDoGerente(): string
+    {
+        return $this->departamento->getGerente()->getNome();
+    }
 }

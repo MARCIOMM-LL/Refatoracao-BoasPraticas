@@ -6,6 +6,12 @@ require 'Departamento.php';
 require 'Gerente.php';
 require 'Pessoa.php';
 
-$maria = new Pessoa(new Departamento(new Gerente('José')));
+$maria = new Pessoa(new Departamento(new Gerente('Márcio')));
 
-echo $maria->getDepartamento()->getGerente()->getNome();
+//Sem refatoração violando o princípio de menor conhecimento
+//ou lei de Demeter, que fala que por exemplo o objeto $maria
+//só deve ter noção aos objetos próximos a ela, e não
+//echo $maria->getDepartamento()->getGerente()->getNome();
+
+//Com refatoração
+echo $maria->getNomeDoGerente();

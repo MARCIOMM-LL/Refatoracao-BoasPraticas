@@ -13,11 +13,22 @@ class Empresa
         array_push($this->funcionarios, $funcionario);
     }
 
+    //Sem refatoração
+    //public function promoveFuncionario(Funcionario $possivelFuncionario, float $aumento)
+    //{
+    //    foreach ($this->funcionarios as $funcionario) {
+    //        if ($funcionario->nome === $possivelFuncionario->nome) {
+    //            $funcionario->salario += $aumento;
+    //        }
+    //    }
+    //}
+
+    //Com refatoração
     public function promoveFuncionario(Funcionario $possivelFuncionario, float $aumento)
     {
         foreach ($this->funcionarios as $funcionario) {
-            if ($funcionario->nome === $possivelFuncionario->nome) {
-                $funcionario->salario += $aumento;
+            if ($funcionario->getNome() === $possivelFuncionario->getNome()) {
+                $funcionario->aumentaSalario($aumento);
             }
         }
     }
